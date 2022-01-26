@@ -1,0 +1,39 @@
+Install maven
+--Download Maven 3.6.3 release for windows/unix
+--Change local repository value to your location in settings.xml
+  <localRepository>C:\Work\NileshProject\.m2\repository</localRepository>
+--Copy this settings.xml folder <MAVEN_FODLER>\apache-maven-3.6.3\conf
+--Important! Normally we use nexus or central repository to publish libraries. In this project some libraries are not available on internet so we will have to use local respository for maven build.
+  You should copy the .m2 folder from zip as it is to your repository location.
+ -- set env variables as per location on your machine JAVA_HOME=C:\Work\WorkBench_4.0.2\jdk1.8.0_181,MAVEN_HOME=C:\Work\NileshProject\apache-maven-3.6.3,set PATH=C:\Work\NileshProject\apache-maven-3.6.3\bin;%PATH%
+-- Open CMD/Terminal with root user access run command "mvn -version". It should display all the information you configured till now.
+
+Build project
+-- Copy "CrudDemoWithMySql" folder and unzip on your machine
+-- Open cmd/terminal with root user and run command "mvn clean install". This will build your war file under $PROJECT_BASE\CrudDemoWithMySql\target folder.
+-- Check if war file is built well.  
+
+Install my sql DB server--> https://dev.mysql.com/downloads/file/?id=507824
+  -- Unzip folder
+  -- Add mysql-8.0.27-winx64\bin folder in PATH variable
+  -- Launch cmd with Administrator access.
+  -- run command "mysqld --install"
+  -- after successfull installation of my sql DB place "mysql-init.txt" file in c:drive
+  -- start service by using "mysqld --init-file=C:\\mysql-init.txt --console" command
+  -- once service is started open another cmd window and run command "mysql -u root -p". It will ask for password. Enter password as "NewPassword"
+  -- Run commands mentioned in DDL.sql
+
+Run application on Tomcat
+  -- Change DB properties in CrudDemoWithMySql.xml according your mysql setup.
+  -- Copy "CrudDemoWithMySql.xml" file in folder $TOMCAT_BASE\Tomcat\apache-tomcat-9.0.46\conf\Catalina\localhost
+  -- Start tomcat. Check logs if tomcat started successfully.
+  -- Access url from browser http://localhost:8080/CrudDemoWithMySql/list
+
+
+Source management 
+Install eclipse --> https://www.eclipse.org/downloads/packages/release/europa/winter/eclipse-ide-java-ee-developers     
+  -- Install Eclipse for JEE developers.
+  -- After installation is done. Go to file--> import--> Type "Existing project from source"
+  -- Select unzipped folder CrudDemoWithMySql. It will import source in eclipse.
+
+BC if you face any difficulties dont call me. :P  
