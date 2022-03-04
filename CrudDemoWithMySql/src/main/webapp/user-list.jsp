@@ -30,7 +30,7 @@
 		<!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
 
 		<div class="container">
-			<h3 class="text-center">List of Users CICD Demo WebHook 1.1 </h3>
+			<h3 class="text-center">List of Users CICD Demo WebHook 2.1 </h3>
 			<hr>
 			<div class="container text-left">
 
