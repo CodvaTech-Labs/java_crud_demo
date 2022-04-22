@@ -18,7 +18,7 @@ import com.codvatech.usermanagement.model.User;
  *
  */
 public class UserDAO {
-	private String jdbcURL = "jdbc:mysql://empdb.cijwgwvfqwgs.ap-south-1.rds.amazonaws.com:3306/demo?allowPublicKeyRetrieval=true&useSSL=false";
+	private String jdbcURL = "jdbc:mysql://demo.cijwgwvfqwgs.ap-south-1.rds.amazonaws.com:3306/demo?allowPublicKeyRetrieval=true&useSSL=false";
 	private String jdbcUsername = "root";
 	private String jdbcPassword = "NewPassword";
 
