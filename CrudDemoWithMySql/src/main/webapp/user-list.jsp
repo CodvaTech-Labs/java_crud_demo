@@ -30,7 +30,7 @@
 		<!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
 
 		<div class="container">
-			<h3 class="text-center">Update CI/CD DevOps Demo</h3>
+			<h3 class="text-center">INFRA UPDATE CI/CD DevOps Demo</h3>
 			<hr>
 			<div class="container text-left">
 
