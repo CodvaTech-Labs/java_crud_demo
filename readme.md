@@ -1,4 +1,5 @@
 Step 1: Setup App Node(tomcat) (EC2 Instance)
+Update
 
 #!/bin/bash
 yum install -y git
