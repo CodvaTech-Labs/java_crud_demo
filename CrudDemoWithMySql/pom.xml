@@ -70,11 +70,17 @@
     <version>2.5</version>
 </dependency>
 </dependencies>
-<distributionManagement>
+ <distributionManagement>
     <repository>
         <id>central</id>
         <name>a0quhinnwxeqb-artifactory-primary-0-releases</name>
-        <url>https://ctlbootcamp.jfrog.io/artifactory/libs-release</url>
+        <url>https://ctlbootcamp.jfrog.io/artifactory/default-maven-virtual</url>
     </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>a0quhinnwxeqb-artifactory-primary-0-snapshots</name>
+        <url>https://ctlbootcamp.jfrog.io/artifactory/default-maven-virtual</url>
+    </snapshotRepository>
 </distributionManagement>
+  
 </project>
