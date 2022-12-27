@@ -4,12 +4,12 @@
   <servers>
     <server>
       <username>ctlsep2022@gmail.com</username>
-      <password>Bootcamp@1234</password>
+      <password>APdFmXrjrdQUETnMsif7LgzHXR</password>
       <id>central</id>
     </server>
     <server>
       <username>ctlsep2022@gmail.com</username>
-      <password>Bootcamp@1234</password>
+      <password>APdFmXrjrdQUETnMsif7LgzHXR</password>
       <id>snapshots</id>
     </server>
   </servers>
@@ -21,14 +21,14 @@
             <enabled>false</enabled>
           </snapshots>
           <id>central</id>
-          <name>default-maven-virtual</name>
-          <url>https://ctlbootcamp.jfrog.io/artifactory/default-maven-virtual</url>
+          <name>libs-release</name>
+          <url>https://ctlbootcamp.jfrog.io/artifactory/libs-release</url>
         </repository>
         <repository>
           <snapshots />
           <id>snapshots</id>
-          <name>default-maven-virtual</name>
-          <url>https://ctlbootcamp.jfrog.io/artifactory/default-maven-virtual</url>
+          <name>libs-snapshot</name>
+          <url>https://ctlbootcamp.jfrog.io/artifactory/libs-snapshot</url>
         </repository>
       </repositories>
       <pluginRepositories>
@@ -37,14 +37,14 @@
             <enabled>false</enabled>
           </snapshots>
           <id>central</id>
-          <name>default-maven-virtual</name>
-          <url>https://ctlbootcamp.jfrog.io/artifactory/default-maven-virtual</url>
+          <name>libs-release</name>
+          <url>https://ctlbootcamp.jfrog.io/artifactory/libs-release</url>
         </pluginRepository>
         <pluginRepository>
           <snapshots />
           <id>snapshots</id>
-          <name>default-maven-virtual</name>
-          <url>https://ctlbootcamp.jfrog.io/artifactory/default-maven-virtual</url>
+          <name>libs-snapshot</name>
+          <url>https://ctlbootcamp.jfrog.io/artifactory/libs-snapshot</url>
         </pluginRepository>
       </pluginRepositories>
       <id>artifactory</id>
