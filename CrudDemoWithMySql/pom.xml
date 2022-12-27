@@ -77,3 +77,4 @@
         <url>https://ctlbootcamp.jfrog.io/artifactory/libs-release</url>
     </repository>
 </distributionManagement>
+</project>
