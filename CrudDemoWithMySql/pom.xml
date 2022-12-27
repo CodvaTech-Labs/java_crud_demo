@@ -71,13 +71,13 @@
 </dependency>
 </dependencies>
 
-  <distributionManagement>
-    <repository>
-        <id>central</id>
-        <name>a0quhinnwxeqb-artifactory-primary-0-releases</name>
-        <url>https://ctlbootcamp.jfrog.io/artifactory/libs-release</url>
-    </repository>
+<distributionManagement>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>a0quhinnwxeqb-artifactory-primary-0-snapshots</name>
+        <url>https://ctlbootcamp.jfrog.io/artifactory/libs-snapshot-local</url>
+    </snapshotRepository>
 </distributionManagement>
   
-  
+
 </project>
