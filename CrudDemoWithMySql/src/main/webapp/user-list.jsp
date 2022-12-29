@@ -30,7 +30,7 @@
 		<!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
 
 		<div class="container">
-			<h3 class="text-center"> CTL Sep  CI/CD Demo Sep 2022</h3>
+			<h3 class="text-center"> FreeStyle Demo Sep 1.0 </h3>
 			<hr>
 			<div class="container text-left">
 
