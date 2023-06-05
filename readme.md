@@ -1,4 +1,4 @@
-Update
+Update 1.0
 Step 1: Setup App Node(tomcat) (EC2 Instance)
 Update
 
