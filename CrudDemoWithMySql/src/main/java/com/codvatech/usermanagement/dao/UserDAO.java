@@ -18,9 +18,9 @@ import com.codvatech.usermanagement.model.User;
  *
  */
 public class UserDAO {
-	private String jdbcURL = "jdbc:mysql://studemo.cijwgwvfqwgs.ap-south-1.rds.amazonaws.com:3306/demo?allowPublicKeyRetrieval=true&useSSL=false";
-	private String jdbcUsername = "admin";
-	private String jdbcPassword = "devopsdemo";
+	private String jdbcURL = "jdbc:mysql://emp-demo.cnkmmwdlvhcb.ap-south-1.rds.amazonaws.com:3306/demo?allowPublicKeyRetrieval=true&useSSL=false";
+	private String jdbcUsername = "root";
+	private String jdbcPassword = "NewPassword";
 
 	private static final String INSERT_USERS_SQL = "INSERT INTO users" + "  (name, email, country) VALUES "
 			+ " (?, ?, ?);";
