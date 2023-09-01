@@ -1,0 +1,68 @@
+
+pipeline {
+    agent any
+   
+    parameters {
+        choice(choices:['Dev','Prod'], description: 'Users Choice', name: 'CHOICE')
+    }
+   
+   stages {
+        stage('Init') {
+            steps('Log-in') {
+                echo 'Log-in'
+            }
+        }
+        
+        stage('Select Environment') {
+            steps('Input') {
+                echo "choice: ${CHOICE}"
+                echo "choice params.: " + params.CHOICE
+                echo "choice env: " + env.CHOICE
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Hello Continuous Build Phase'
+                checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/CodvaTech-Labs/java_crud_demo.git']]]
+                sh '''
+                cd CrudDemoWithMySql
+                mvn --version
+                mvn clean
+                mvn install
+                aws s3 cp /var/lib/jenkins/workspace/ci-cd-all-env/CrudDemoWithMySql/target/CrudDemoWithMySql-0.0.1-SNAPSHOT.war s3://crud-demo-build/
+                '''
+            }
+        }
+        
+        stage('dev-deployment') {
+            when { 
+                expression { env.CHOICE == 'Dev' }
+            }   
+            
+            steps('Execute')    {
+                echo 'Dev Deployment is in Progress'
+                ansiblePlaybook credentialsId: 'ec2-user', installation: 'Ansible', playbook: '/etc/ansible/playbook/dev_deployment.yml'
+            } 
+        }       
+        
+        stage('prod-deployment') {
+            when {
+                expression {env.CHOICE == 'Prod'}
+            }
+            
+            steps('Execute'){
+                echo 'Prod Deployment is in Progress' 
+                ansiblePlaybook credentialsId: 'ec2-user', installation: 'Ansible', playbook: '/etc/ansible/playbook/prod_deployment.yml'   
+            }
+        }
+
+        stage('Slack Message') {
+            steps {
+                slackSend channel: '#devops-alerts',
+                color: 'good',
+                message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}"
+      }
+    }
+   }
+}
