@@ -13,3 +13,10 @@ cp CrudDemoWithMySql.war /tmp/artifacts
 cp /tmp/artifacts/CrudDemoWithMySql.war /usr/share/tomcat/webapps
 sudo systemctl start tomcat
 ```
+
+## Important Link 
+Kindly refer below code:
+
+- [CICD Pipeline Code] - https://github.com/CodvaTech-Labs/java_crud_demo/blob/main/devops/cicd.yml
+- [Ansible Playbook] - https://github.com/CodvaTech-Labs/java_crud_demo/blob/main/devops/
+
