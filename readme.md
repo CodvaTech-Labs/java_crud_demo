@@ -1,6 +1,6 @@
 ## Setup CI/CD Pipleine For Java based Web Application 
 
-# Refer below user data script for Application Deployment 
+## Refer below user data script for Application Deployment 
 
 ```sh
 #!/bin/bash
