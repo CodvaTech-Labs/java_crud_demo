@@ -1,0 +1,28 @@
+
+
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Hello Continuous Build Phase'
+                checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/CodvaTech-Labs/java_crud_demo.git']]]
+                sh '''
+                cd CrudDemoWithMySql
+                mvn --version
+                mvn clean
+                mvn install
+                aws s3 cp /var/lib/jenkins/workspace/ci-job/CrudDemoWithMySql/target/CrudDemoWithMySql-0.0.1-SNAPSHOT.war s3://crud-demo-build/
+                '''
+            }
+        }
+
+        
+    }
+
+    post { 
+        always { 
+            cleanWs()
+        }
+    }
+}
