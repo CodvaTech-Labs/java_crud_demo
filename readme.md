@@ -8,6 +8,44 @@ sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
 sudo yum install -y apache-maven
 mvn --version
 ```
+
+***Fork and clone below Java Project Repository***
+- [Java Web Demo App](https://github.com/CodvaTech-Labs/java_crud_demo)
+
+**Create Build for Java based App using below Maven Command**
+
+```sh
+mvn clean — Delete the previously compiled java files and 
+resources(Files inside the target folder will be deleted)
+
+mvn compile — Compile the source java classes. If you need to compile the test classes 
+of the maven project, you can use the “compiler:testCompile” command.
+
+mvn package — Wrap the source code into a file format which 
+we can share or distribute (eg:war, jar). Simply converts in to an executable java program.
+
+mvn install — Install the package or the wrapped compiled 
+code(jar or war file)in our local repository. So we can use it for our other projects as well.
+
+mvn test — Run tests using an unit test framework and you 
+can see the output in console.
+
+mvn deploy — Install or copy the final package to a remote 
+repository. So other developers also can use it.
+
+mvn dependency:tree
+This command generates the dependency tree of the Maven project
+
+mvn dependency:analyze
+This command analyzes the maven project to identify the unused declared and used undeclared dependencies:
+
+Validate Path - /home/ec2-user/test/java_crud_demo/CrudDemoWithMySql/target
+
+Upload Artifacts to S3 Bucket (Create Bucket in AWS S3 to Store Artifacts)
+aws s3 cp /home/ec2-user/maven_demo/java_crud_demo/CrudDemoWithMySql/target/CrudDemoWithMySql-0.0.1-SNAPSHOT.war s3://crud-demo-build/
+
+```
+
 ## Refer below user data script for Application Deployment 
 
 ```sh
