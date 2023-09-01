@@ -22,6 +22,7 @@ Kindly refer below code:
 
 
 ## CD using Ansible and Jenkins 
+
 ## Update ec2 inventory details in ansible host file 
 Path - /etc/ansible/hosts
 
@@ -37,6 +38,7 @@ Path - /etc/ansible/hosts
 
 Path : /etc/ansible/playbook
 
+** Deployment Playbook for Dev Environment **
 ```sh
 - hosts: dev
   become: true
@@ -49,6 +51,7 @@ Path : /etc/ansible/playbook
       command: sh /tmp/deployment.sh
 ```
 
+** Deployment Playbook for Prod Environment **
 ```sh
 - hosts: prod
   become: true
@@ -60,6 +63,9 @@ Path : /etc/ansible/playbook
     - name: Execute the script
       command: sh /tmp/deployment.sh
 ```
+
+** Deployment Shell Script** 
+
 ```sh
 #!/bin/bash
 systemctl stop tomcat
@@ -72,6 +78,7 @@ cp /tmp/artifacts/CrudDemoWithMySql.war /usr/share/tomcat/webapps
 sudo systemctl start tomcat
 ```
 
-## Setup CI/CD Pipeline in Jenkins
-https://github.com/CodvaTech-Labs/java_crud_demo/blob/main/devops/cicd.yml
+**Setup CI/CD Pipeline in Jenkins**
+- [CI/CD Piepeline Code](https://github.com/CodvaTech-Labs/java_crud_demo/blob/main/devops/cicd.yml)
+
 
