@@ -38,7 +38,7 @@ Path - /etc/ansible/hosts
 
 Path : /etc/ansible/playbook
 
-** Deployment Playbook for Dev Environment **
+**Deployment Playbook for Dev Environment**
 ```sh
 - hosts: dev
   become: true
@@ -51,7 +51,7 @@ Path : /etc/ansible/playbook
       command: sh /tmp/deployment.sh
 ```
 
-** Deployment Playbook for Prod Environment **
+**Deployment Playbook for Prod Environment**
 ```sh
 - hosts: prod
   become: true
@@ -64,7 +64,7 @@ Path : /etc/ansible/playbook
       command: sh /tmp/deployment.sh
 ```
 
-** Deployment Shell Script** 
+**Deployment Shell Script** 
 
 ```sh
 #!/bin/bash
