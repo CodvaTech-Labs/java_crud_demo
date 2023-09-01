@@ -1,0 +1,9 @@
+- hosts: prod
+  become: true
+  become_user: root
+  gather_facts: false
+  tasks:
+    - name: Transfer executable script
+      copy: src=deployment.sh dest=/tmp/ mode=0777
+    - name: Execute the script
+      command: sh /tmp/deployment.sh
