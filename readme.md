@@ -32,7 +32,7 @@ Path - /etc/ansible/hosts
 
 [prod]
 172.31.45.140
-```sh
+```
 
 ## Create new ansible playbook for dev and prod deployment 
 
