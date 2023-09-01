@@ -46,6 +46,9 @@ aws s3 cp /home/ec2-user/maven_demo/java_crud_demo/CrudDemoWithMySql/target/Crud
 
 ```
 
+**CI - Setup Job in Jenkins**
+- [CI Pipeline Code] - https://github.com/CodvaTech-Labs/java_crud_demo/blob/main/devops/ci-job.yml
+
 ## Refer below user data script for Application Deployment 
 
 ```sh
