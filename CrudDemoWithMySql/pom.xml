@@ -71,6 +71,11 @@
 </dependency>
 </dependencies>
 
+<properties>
+  <sonar.organization>codvatech-labs</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+</properties>
+  
 <distributionManagement>
     <repository>
         <id>central</id>
