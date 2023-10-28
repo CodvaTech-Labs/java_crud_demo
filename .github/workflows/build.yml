@@ -16,7 +16,7 @@ jobs:
 
     - name: Build with Maven
       run: | 
-        mvn clean package  # Adjust your build command as needed
+        #mvn clean package  # Adjust your build command as needed
         ls
         pwd
 
