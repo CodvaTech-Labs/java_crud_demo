@@ -23,6 +23,7 @@ jobs:
         mvn --version
         mvn clean
         mvn install
+        cd target
         ls
 
     - name: Upload artifacts to AWS S3
@@ -30,11 +31,11 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1  # Replace with your desired AWS region
+        aws-region: ap-south-1 # Replace with your desired AWS region
 
     - name: Copy artifacts to S3
       run: |
-        aws s3 cp target/CrudDemoWithMySql-0.0.1-SNAPSHOT.war s3://ctl-crud-demo-build/
+        aws s3 cp CrudDemoWithMySql-0.0.1-SNAPSHOT.war s3://ctl-crud-demo-build/
       env:
         AWS_DEFAULT_REGION: ap-south-1  # Replace with your desired AWS region
 
