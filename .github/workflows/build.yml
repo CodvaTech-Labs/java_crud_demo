@@ -13,6 +13,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Upload artifacts to AWS S3
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ap-south-1 # Replace with your desired AWS region
+
 
     - name: Build with Maven
       run: | 
@@ -25,20 +32,4 @@ jobs:
         mvn install
         cd target
         ls
-
-    - name: Upload artifacts to AWS S3
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ap-south-1 # Replace with your desired AWS region
-
-    - name: Copy artifacts to S3
-      run: |
-        pwd
-        ls
         aws s3 cp CrudDemoWithMySql-0.0.1-SNAPSHOT.war s3://ctl-crud-demo-build/
-      env:
-        AWS_DEFAULT_REGION: ap-south-1  # Replace with your desired AWS region
-
-# Note: You need to set up AWS access credentials (AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY) as secrets in your GitHub repository.
