@@ -19,6 +19,11 @@ jobs:
         #mvn clean package  # Adjust your build command as needed
         ls
         pwd
+        cd CrudDemoWithMySql
+        mvn --version
+        mvn clean
+        mvn install
+        ls
 
     - name: Upload artifacts to AWS S3
       uses: aws-actions/configure-aws-credentials@v1
