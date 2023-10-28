@@ -34,8 +34,8 @@ jobs:
 
     - name: Copy artifacts to S3
       run: |
-        aws s3 cp target/your-web-app.war s3://your-s3-bucket/your-path/
+        aws s3 cp target/CrudDemoWithMySql-0.0.1-SNAPSHOT.war s3://ctl-crud-demo-build/
       env:
-        AWS_DEFAULT_REGION: us-east-1  # Replace with your desired AWS region
+        AWS_DEFAULT_REGION: ap-south-1  # Replace with your desired AWS region
 
 # Note: You need to set up AWS access credentials (AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY) as secrets in your GitHub repository.
