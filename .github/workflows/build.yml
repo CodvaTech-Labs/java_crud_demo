@@ -33,3 +33,13 @@ jobs:
         cd target
         ls
         aws s3 cp CrudDemoWithMySql-0.0.1-SNAPSHOT.war s3://ctl-crud-demo-build/
+
+    - name: Create Docker Build and Upload to ECR 
+      run: | 
+        aws s3 cp s3://ctl-crud-demo-build/CrudDemoWithMySql-0.0.1-SNAPSHOT.war ./
+        mv CrudDemoWithMySql-0.0.1-SNAPSHOT.war CrudDemoWithMySql.war
+        aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/s3c4l2m0
+        docker build -t ctl-crud-demo .
+        docker tag ctl-crud-demo:latest public.ecr.aws/s3c4l2m0/ctl-crud-demo:latest
+        docker push public.ecr.aws/s3c4l2m0/ctl-crud-demo:latest
+    
