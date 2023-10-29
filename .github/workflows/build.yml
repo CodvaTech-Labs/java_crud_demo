@@ -36,6 +36,7 @@ jobs:
 
     - name: Create Docker Build and Upload to ECR 
       run: | 
+        cd CrudDemoWithMySql
         aws s3 cp s3://ctl-crud-demo-build/CrudDemoWithMySql-0.0.1-SNAPSHOT.war ./
         mv CrudDemoWithMySql-0.0.1-SNAPSHOT.war CrudDemoWithMySql.war
         aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/s3c4l2m0
