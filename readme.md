@@ -1,6 +1,6 @@
 ## Setup CI/CD Pipleine For Java based Web Application 
 
-**Install Maven On Jenkins Machine**
+**Install Maven On Jenkins Machine*
 
 ```sh
 sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
