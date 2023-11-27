@@ -1,6 +1,6 @@
 #!/bin/bash
 systemctl stop tomcat
-aws s3 cp s3://crud-demo-build/CrudDemoWithMySql-0.0.1-SNAPSHOT.war ./
+aws s3 cp s3://ctl-crud-demo-build/CrudDemoWithMySql-0.0.1-SNAPSHOT.war ./
 rm -rf /tmp/artifacts
 mkdir /tmp/artifacts
 mv CrudDemoWithMySql-0.0.1-SNAPSHOT.war CrudDemoWithMySql.war
