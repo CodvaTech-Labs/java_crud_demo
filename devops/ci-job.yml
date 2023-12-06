@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Hello Continuous Build Phase'
-                checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/CodvaTech-Labs/java_crud_demo.git']]]
+                checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Vaish3017/java_crud_demo.git']]]
                 sh '''
                 cd CrudDemoWithMySql
                 mvn --version
